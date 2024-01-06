@@ -1,0 +1,95 @@
+\documentclass[runningheads]{llncs}
+
+% This is samplepaper.tex, a sample chapter demonstrating the
+% LLNCS macro package for Springer Computer Science proceedings;
+% Version 2.20 of 2017/10/04
+% \usepackage{verbatim}
+
+\usepackage{comment} % for multiline comments
+% uncomment to include stuff in standard comment-environment
+% \includecomment{comment}
+% \usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
+\graphicspath{{./img/}{./tmp/}}
+
+% If you use the hyperref package, please uncomment the following line
+% to display URLs in blue roman font according to Springer's eBook style:
+% \renewcommand\UrlFont{\color{blue}\rmfamily}
+
+
+\includecomment{draft}
+% \excludecomment{draft}
+\newcommand\cc[1]{}
+\newcommand\cch[1]{}
+\newcommand\cci[1]{}
+\begin{draft}
+	\renewcommand\cc[1][$<$cite?$>$]{\textcolor{blue}{$<$#1$>$}}%
+\end{draft}
+
+\begin{draft}
+	\renewcommand\cch[1][]{
+		\par\noindent
+		\hfill\break
+		% \textcolor{blue}{$<$#1$>$}
+		\cc[#1]
+		\hfill\break
+	}
+\end{draft}
+
+\begin{draft}
+	\renewcommand\cci[1][]{
+		\par\noindent
+		% \hfill\break
+		% \begin{itemize}[nosep]
+		\begin{itemize}
+			\nointerlineskip
+			% \item \textcolor{blue}{#1}
+			\item \cc[#1]%
+		\end{itemize}
+	}
+\end{draft}
+
+% % -------------- All packages go above this line --------------
+\begin{document}
+% ----------------- Title -----------------
+\input{sec/0-title_author}
+
+\maketitle              % typeset the header of the contribution
+
+% ----------------- Abstract -----------------
+\input{sec/1-abstract}
+
+% ----------------- Introduction -----------------
+\input{sec/2-intro}
+
+% ----------------- Related Work -----------------
+\input{sec/3-related}
+
+% ----------------- Methodology -----------------
+\input{sec/4-method}
+
+% ----------------- Experiments -----------------
+\input{sec/5-results}
+
+% ----------------- Conclusion -----------------
+\input{sec/6-conclusion}
+
+% ----------------- Bibliography -----------------
+% % BibTeX users should specify bibliography style 'splncs04'.
+% % References will then be sorted and formatted in the correct style.
+
+\bibliographystyle{lib/splncs04}
+\bibliography{sec/ref}
+\cci[Follow a bibliography style]
+\cci[All recent/relevant papers only]
+\cci[20-40 references]
+
+% \bibliographystyle{splncs04}
+% \bibliography{mybibliography}
+
+
+\end{document}
